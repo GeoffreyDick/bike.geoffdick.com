@@ -10,12 +10,21 @@ dependencies:
   '@astrojs/sitemap':
     specifier: ^1.2.2
     version: 1.2.2
+  '@fontsource/radio-canada':
+    specifier: ^4.5.8
+    version: 4.5.8
+  '@fontsource/roboto-flex':
+    specifier: ^4.5.5
+    version: 4.5.5
   astro:
     specifier: ^2.3.0
     version: 2.3.0
 
 devDependencies:
   '@unocss/reset':
+    specifier: ^0.51.8
+    version: 0.51.8
+  '@unocss/transformer-directives':
     specifier: ^0.51.8
     version: 0.51.8
   unocss:
@@ -591,6 +600,14 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@fontsource/radio-canada@4.5.8:
+    resolution: {integrity: sha512-Dnv+AZxYLLUKqUxAQeh5iOZ0T/veOPG8i1D9fvrbL+FQKyhbT50kxUuvYtbqk9PXJCSvNNKOeA6EzvxV19RRKg==}
+    dev: false
+
+  /@fontsource/roboto-flex@4.5.5:
+    resolution: {integrity: sha512-sBm53Q8WA61CS6ic4PLCdSDukpb2Yemt/f3tjBXlikV9zz2bg40KCUDVImAg7Hdzz9J57ggWVnuNW3RHLccqlQ==}
+    dev: false
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
