@@ -1,11 +1,16 @@
 // uno.config.ts
 import { defineConfig, presetTypography, presetUno } from "unocss";
-import presetTheme from "unocss-preset-theme";
+// import presetTheme from "unocss-preset-theme";
 import transformerDirectives from "@unocss/transformer-directives";
 import type { Theme } from "unocss/preset-uno";
 
 export default defineConfig<Theme>({
   theme: {
+    colors: {
+      base: {
+        100: "#f3f3f2"
+      },
+    },
     fontFamily: {
       sans: '"Roboto FlexVariable", sans-serif',
       display: '"Radio CanadaVariable", sans-serif',
@@ -25,11 +30,16 @@ export default defineConfig<Theme>({
     }),
 
     // https://github.com/Dunqing/unocss-preset-theme
-    presetTheme<Theme>({
-      theme: {
-        dark: {},
-      },
-    }),
+    // presetTheme<Theme>({
+    //   theme: {
+    //     dark: {
+    //       fontFamily: {
+    //         sans: '"Roboto FlexVariable", sans-serif',
+    //         display: '"Radio CanadaVariable", sans-serif',
+    //       },
+    //     },
+    //   },
+    // }),
   ],
   transformers: [transformerDirectives()],
 });

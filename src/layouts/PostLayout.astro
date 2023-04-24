@@ -1,38 +1,59 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
+import mapPlaceholder from '@assets/images/placeholder.png';
 
-type Props = CollectionEntry<"posts">["data"];
+type Props = CollectionEntry<'posts'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
+<html lang="en" class="bg-base-100">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
 
-  <body>
-    <Header />
-    <main>
-      <article class="prose">
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
-    </main>
-    <Footer />
-  </body>
+	<body>
+		<Header />
+		<main class="relative">
+			<div class="container px-32 py-32">
+				<article class="prose text-lg lg:text-xl prose-stone dark:prose-invert max-none">
+					<h1 class="title">{title}</h1>
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
+					<hr />
+					<slot />
+				</article>
+			</div>
+			<div class="bg-black absolute top-0 right-0 w-2/3 h-full -z-10">
+				<div class="relative w-full h-full bg-red-500">
+					<div class="sticky top-0 w-full h-screen">
+						<Image
+							src={mapPlaceholder}
+							width={1920}
+							alt="Placeholder for Leaflet.js map"
+							class="object-cover w-full h-full"
+						/>
+					</div>
+					<div id="map-overlay" class="absolute top-0 right-0 bottom-0 left-0 w-full h-full"></div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+		<style>
+			#map-overlay {
+				background: linear-gradient(90deg, theme('colors.base.100') 0%, rgba(0, 0, 0, 0) 90%);
+			}
+		</style>
+	</body>
 </html>
