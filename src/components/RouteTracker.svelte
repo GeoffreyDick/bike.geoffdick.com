@@ -92,7 +92,7 @@
 	onMount(() => {
 		latestIndex.set(0);
 
-		const resizeObserver = new ResizeObserver((entries) => {
+		const resizeObserver = new ResizeObserver(() => {
 			// Invalidate map size, redrawing tiles if needed
 			map?.invalidateSize();
 
@@ -173,14 +173,6 @@
 	latestIndex.listen((val) => {
 		startAnimation(val);
 	});
-
-	let window = {
-		w: 0,
-		h: 0,
-	};
-
-	$: {
-	}
 </script>
 
 <div id="map" class={className} bind:this={mapEl} use:mapBuilder />
