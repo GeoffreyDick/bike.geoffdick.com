@@ -37,6 +37,7 @@
     "prettier-plugin-svelte": "^2.10.0",
     "svelte-intersection-observer": "^0.10.0",
     "unocss": "^0.51.8",
-    "unocss-preset-theme": "^0.6.0"
+    "unocss-preset-theme": "^0.6.0",
+    "xmldom": "^0.6.0"
   }
 }
