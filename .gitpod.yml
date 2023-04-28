@@ -1,3 +1,4 @@
+
 image: gitpod/workspace-full:latest
 
 tasks:
@@ -7,3 +8,14 @@ tasks:
       source ~/.bashrc
     init: bun install
     command: bun run dev
+
+vscode:
+  extensions:
+    - astro-build.astro-vscode
+    - svelte.svelte-vscode
+    - dbaeumer.vscode-eslint
+    - DavidAnson.vscode-markdownlint
+    - unifiedjs.vscode-mdx
+    - esbenp.prettier-vscode
+    - antfu.unocss
+    - ZixuanChen.vitest-explorer
