@@ -2,6 +2,8 @@ image: gitpod/workspace-full:latest
 
 tasks:
   - name: Dev Server
-    before: curl -fsSL https://bun.sh/install | bash
+    before: | 
+      curl -fsSL https://bun.sh/install | bash
+      source ~/.bashrc
     init: bun install
     command: bun run dev
