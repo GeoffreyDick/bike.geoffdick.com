@@ -1,6 +1,6 @@
 [build]
   # Run custom build script for bun
-  command = "./scripts/build.sh"
+  command = "sh ./scripts/build.sh"
   # Output folder
   publish = "dist"
 
