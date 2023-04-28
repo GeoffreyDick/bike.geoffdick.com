@@ -1,0 +1,9 @@
+[build]
+  # Run custom build script for bun
+  command = "./scripts/build.sh"
+  # Output folder
+  publish = "dist"
+
+[build.environment]
+   # Disable NPM install
+   NPM_FLAGS = "--version"
