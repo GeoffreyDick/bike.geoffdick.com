@@ -84,7 +84,7 @@
 	/** The marker showing rider position */
 	let marker: Marker;
 	let bounds: LatLngBoundsExpression;
-  let mapIsReady: boolean = false;
+	let mapIsReady: boolean = false;
 
 	/** Attaches a Leaflet map to a div element and returns it */
 	function createMap(el: HTMLDivElement, initialPosition: LatLng): Map {
@@ -142,7 +142,7 @@
 			}),
 		}).addTo(map);
 		L.geoJSON(data.tracks).addTo(map);
-		map.whenReady(() => console.log('ready'));
+		map.whenReady(() => (mapIsReady = true));
 
 		return {
 			destroy: () => {
@@ -236,6 +236,11 @@
 </script>
 
 {#await promise then data}
-}
-	<div id="map" class={className} use:mapBuilder={data} use:resizeObserver={handleMapResize} />
+	<div
+		id="map"
+		class={className}
+		class:opacity-100={mapIsReady === true}
+		use:mapBuilder={data}
+		use:resizeObserver={handleMapResize}
+	/>
 {/await}
