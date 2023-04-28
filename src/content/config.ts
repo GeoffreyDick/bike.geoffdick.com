@@ -13,7 +13,7 @@ const posts = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.string().optional(),
-		gpxFiles: z.array(z.string().startsWith('src/assets/gpx/').endsWith('.gpx')),
+		gpxFiles: z.array(z.string().startsWith('/src/assets/gpx/').endsWith('.gpx')),
 	}),
 });
 

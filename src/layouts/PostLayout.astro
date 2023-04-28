@@ -3,18 +3,12 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { parseGpx } from 'src/lib/parseGpx';
 import MapWrapper from '@components/MapWrapper.svelte';
 
 type Props = CollectionEntry<'posts'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, gpxFiles } = Astro.props;
 
-let tracks = []
-for (let file of gpxFiles) {
-  const geoJson = await parseGpx(file);
-  tracks.push(geoJson)
-}
 ---
 
 <html lang="en" class="bg-base-100">
@@ -29,10 +23,9 @@ for (let file of gpxFiles) {
           <h1 class="title">{title}</h1>
           <hr />
           <slot />
-          {JSON.stringify(tracks[0])}
         </article>
       </div>
-      <MapWrapper tracks={tracks} client:idle client:only="svelte" />
+      <MapWrapper gpxFiles={gpxFiles} client:load client:only="svelte" />
     </main>
 		<Footer />
 	</body>

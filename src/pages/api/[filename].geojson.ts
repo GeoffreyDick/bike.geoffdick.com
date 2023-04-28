@@ -3,7 +3,7 @@ import { gpx } from '@tmcw/togeojson';
 import { DOMParser } from 'xmldom';
 import { readFile } from 'node:fs/promises';
 
-async function parseGpx(path: string) {
+async function parseGpx(path: string): Promise<string> {
 	let file: string;
 	try {
 		file = await readFile(path, 'utf-8');
@@ -27,6 +27,7 @@ export const get: APIRoute = async function get({ params }) {
 	const filePath = `./src/assets/gpx/${filename}.gpx`;
 
 	const geojson = await parseGpx(filePath);
+
 	return {
 		status: 200,
 		body: geojson,
