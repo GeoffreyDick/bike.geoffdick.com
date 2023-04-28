@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import L from 'leaflet';
-	import 'leaflet/dist/leaflet.css';
 	import type { Map, LatLng, LatLngTuple, Marker, LatLngBoundsExpression } from 'leaflet';
 	import { latestIndex } from 'src/stores/routeStore';
 	import { fetchApi } from 'src/lib/fetchApi';
@@ -129,6 +128,9 @@
 	): {
 		destroy: () => void;
 	} {
+		async () => {
+			import('leaflet/dist/leaflet.css');
+		};
 		const initialPosition: LatLng = L.latLng(data.coordinates[0].lat, data.coordinates[0].lng, data.coordinates[0].alt);
 
 		map = createMap(el, initialPosition);
