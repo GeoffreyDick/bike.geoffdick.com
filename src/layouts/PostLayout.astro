@@ -6,9 +6,9 @@ import Footer from '../components/Footer.astro';
 import MapWrapper from '@components/MapWrapper.svelte';
 import 'leaflet/dist/leaflet.css';
 
-type Props = CollectionEntry<'posts'>['data'];
+type Props = CollectionEntry<'races'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, gpxFiles } = Astro.props;
+const { title, description, pubDate, updatedDate, gpxFiles } = Astro.props;
 
 ---
 
