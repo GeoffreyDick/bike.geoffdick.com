@@ -1,0 +1,21 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+	const races = await getCollection('races');
+	return races.map((race) => ({
+		params: { slug: race.slug },
+		props: race,
+	}));
+}
+type Props = CollectionEntry<'races'>;
+
+const race = Astro.props;
+const { Content } = await race.render();
+---
+
+<PostLayout {...race.data}>
+	<h1>{race.data.title}</h1>
+	<Content />
+</PostLayout>
