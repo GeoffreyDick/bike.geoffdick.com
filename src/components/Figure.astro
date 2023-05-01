@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+	src: string;
+	alt: string;
+	caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="w-wider">
+	<Image {src} {alt} width={768} />
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>

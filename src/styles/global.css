@@ -1,4 +1,4 @@
-html {
+* {
 	@apply font-sans;
 }
 
@@ -13,16 +13,4 @@ h6 {
 
 .marker {
 	@apply text-red-500 transition-all duration-50;
-}
-
-#map-overlay {
-	background: theme('colors.base.100');
-	opacity: 0.8;
-}
-
-@screen xl {
-	#map-overlay {
-		background: linear-gradient(90deg, theme('colors.base.100') 0%, rgba(0, 0, 0, 0) 50%);
-		opacity: 1;
-	}
 }

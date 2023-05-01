@@ -103,9 +103,10 @@
 			inertia: true,
 		}).fitBounds(bounds);
 		L.tileLayer(
-			`https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=${import.meta.env.PUBLIC_THUNDERFOREST_API_KEY}`,
-			{
-				maxZoom: 14,
+			// `https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=${import.meta.env.PUBLIC_THUNDERFOREST_API_KEY}`,
+			'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
+      {
+				maxZoom: 15,
 			}
 		).addTo(map);
 
@@ -196,7 +197,7 @@
 		}
 
 		marker?.setLatLng({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng });
-		map?.setView({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng }, 11);
+		map?.setView({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng }, 12);
 	}
 
 	function startAnimation(to: number) {

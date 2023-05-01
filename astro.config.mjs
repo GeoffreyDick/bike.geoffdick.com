@@ -15,7 +15,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		UnoCSS({
-			injectReset: true,
+			injectReset: '@unocss/reset/tailwind-compat.css',
 		}),
 		svelte(),
 	],
