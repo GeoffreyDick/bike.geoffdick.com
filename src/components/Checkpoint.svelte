@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { latestIndex } from 'src/stores/routeStore';
-	import IntersectionObserver from 'svelte-intersection-observer';
+	import { inview } from 'svelte-inview';
+	import type { Options } from 'svelte-inview';
+	import { addToObservedIndexes, latestIndex, removeFromObservedIndexes } from 'src/stores/routeStore';
 
 	interface $$Props {
 		index: number;
@@ -8,14 +9,13 @@
 
 	export let index: number;
 
-	let element: HTMLDivElement;
+	const options: Options = {
+		rootMargin: '-45% 0% -45% 0%',
+	};
+
+	let isInView: boolean;
 </script>
 
-<IntersectionObserver
-	{element}
-	on:observe={(e) => {
-		latestIndex.set(index);
-	}}
->
-	<div bind:this={element} />
-</IntersectionObserver>
+<div use:inview={options} on:inview_enter={() => latestIndex.set(index)}>
+	<slot />
+</div>

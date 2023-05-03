@@ -45,9 +45,11 @@ const { title, description, image, pubDate, updatedDate, gpxFiles } = Astro.prop
 					</div>
 				</article>
 			</div>
-			<div class="-z-10 absolute top-0 right-0 bottom-0 left-0 lg:relative lg:flex-grow opacity-20 lg:opacity-100">
+			<div
+				class="bg-secondary-400 absolute top-0 right-0 bottom-0 left-0 lg:relative lg:flex-grow opacity-20 lg:opacity-100"
+			>
 				<RouteTracker
-					class="w-full h-screen sticky top-0 opacity-100 opacity-0 transition-opacity ease-in-out duration-2000"
+					class="relative w-full h-screen sticky top-0 opacity-100 opacity-0 transition-opacity ease-in-out duration-2000"
 					gpxFiles={gpxFiles}
 					client:load
 					client:only="svelte"
