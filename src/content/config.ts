@@ -1,11 +1,5 @@
 import { defineCollection, z } from "astro:content";
 
-const seoFields = {
-  title: z.string(),
-  description: z.string(),
-  image: z.string().url().optional(),
-};
-
 const postFields = {
   pubDate: z
     .string()
@@ -18,8 +12,12 @@ const postFields = {
 };
 
 const races = defineCollection({
-  schema: z.object({
-    ...seoFields,
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    image: image().refine((img) => img.width >= 1080, {
+      message: "Cover image must be at least 1080 pixels wide!",
+    }).optional(),
     ...postFields,
     gpxFiles: z.array(
       z.string().startsWith("/src/assets/gpx/").endsWith(".gpx"),

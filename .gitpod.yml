@@ -11,11 +11,14 @@ tasks:
 
 vscode:
   extensions:
-    - astro-build.astro-vscode
-    - svelte.svelte-vscode
-    - dbaeumer.vscode-eslint
-    - DavidAnson.vscode-markdownlint
-    - unifiedjs.vscode-mdx
-    - esbenp.prettier-vscode
+		- eamodio.gitlens
     - antfu.unocss
+    - astro-build.astro-vscode
+    - DavidAnson.vscode-markdownlint
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - github.vscode-pull-request-github
+    - ms-azuretools.vscode-docker
+    - svelte.svelte-vscode
+    - unifiedjs.vscode-mdx
     - ZixuanChen.vitest-explorer

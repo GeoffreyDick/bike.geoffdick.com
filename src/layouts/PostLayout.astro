@@ -5,29 +5,57 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MapWrapper from '@components/MapWrapper.svelte';
 import 'leaflet/dist/leaflet.css';
+import RouteTracker from '@components/RouteTracker.svelte';
+import { Image } from 'astro:assets';
+import Figure from '@components/Figure.astro';
 
 type Props = CollectionEntry<'races'>['data'];
 
-const { title, description, pubDate, updatedDate, gpxFiles } = Astro.props;
-
+const { title, description, image, pubDate, updatedDate, gpxFiles } = Astro.props;
 ---
 
-<html lang="en" class="bg-base-100">
+<html lang="en" class="bg-base-50">
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
 	<body>
-		<Header />
-    <main class="relative">
-      <div class="container px-32 py-32">
-        <article class="prose text-lg lg:text-xl prose-stone dark:prose-invert xl:max-w-xl 2xl:max-w-2xl">
-          <h1 class="title">{title}</h1>
-          <hr />
-          <slot />
-        </article>
-      </div>
-      <MapWrapper gpxFiles={gpxFiles} client:load client:only="svelte" />
-    </main>
+		<main class="relative lg:flex lg:flex-row lg:items-stretch">
+			<div class="@container/article w-screen lg:w-xl xl:w-2xl 2xl:w-4xl">
+				<div class="p-8 @xl/article:p-16 @4xl/article:(p-32 pb-16) bg-base-200">
+					<p class="text-display text-3xl font-bold text-[#ab742b] mb-4">2022</p>
+					<h1 class="text-display font-bold text-4xl @xl/article:(text-6xl) @4xl/article:(text-7xl) mb-8">{title}</h1>
+					<div class="prose prose-zinc text-lg @xl/article:text-xl @4xl/article:text-2xl">
+						<figure class="my-8">
+							<blockquote>
+								<p>We expect the little guy to be a feisty challenge and a tough one to knock-out in a weekend.</p>
+							</blockquote>
+							<figcaption>
+								&mdash;
+								<cite><a href="https://lostelephant.ca">lostelephant.ca</a></cite>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+
+				<article
+					class="prose text-lg @xl/article:(text-xl -mt-24) @4xl/article:(text-2xl -mt-40) prose-zinc dark:prose-invert max-w-none"
+				>
+					<div class="block p-8 @xl/article:p-16 @4xl/article:p-32">
+						<slot />
+					</div>
+				</article>
+			</div>
+			<div
+				class="bg-secondary-400 absolute top-0 right-0 bottom-0 left-0 lg:relative lg:flex-grow opacity-20 lg:opacity-100"
+			>
+				<RouteTracker
+					class="relative w-full h-screen sticky top-0 opacity-100 opacity-0 transition-opacity ease-in-out duration-2000"
+					gpxFiles={gpxFiles}
+					client:load
+					client:only="svelte"
+				/>
+			</div>
+		</main>
 		<Footer />
 	</body>
 </html>

@@ -1,6 +1,7 @@
 ---
-title: 2022 Lost Elephant (Dumbo)
+title: Lost Elephant
 description: 'Lorem ipsum dolor sit amet'
+image: /src/assets/images/2022-lost-elephant/day-1/beating-the-heat.jpg
 pubDate: 'Jul 02 2022'
 gpxFiles:
   - '/src/assets/gpx/2022_Lost_Elephant_Dumbo_Day_1.gpx'
@@ -14,71 +15,391 @@ result:
   status: Finished
   place: 6
   time: 1d16h00m
+statistics:
+  - name: Course
+    value: Dumbo
+  - name: Distance
+    value: 347.7
+    unit: km
+  - name: Elevation Gain
+    value: 5365
+    unit: m
 ---
 
 import Checkpoint from '@components/Checkpoint.svelte';
+import Figure from '@components/Figure.astro';
+import RouteStatistics from '@components/RouteStatistics.astro';
 
-<Checkpoint index={0} client:load client:only="svelte" />
+import imgViewFromTheHotel from '@assets/images/2022-lost-elephant/prologue/view-from-the-hotel-hardware.jpg';
+import imgTowardsTheChiefIsadore from '@assets/images/2022-lost-elephant/day-1/towards-the-chief-isadore-trail.jpg';
+import imgMistyMorning from '@assets/images/2022-lost-elephant/day-1/misty-morning-out-of-cranbrook.jpg';
+import imgPraiseTheSun from '@assets/images/2022-lost-elephant/day-1/praise-the-sun.jpg';
+import imgAlmostAtTheTop from '@assets/images/2022-lost-elephant/day-1/almost-at-the-top.jpg';
+import imgWhiteswanLake from '@assets/images/2022-lost-elephant/day-1/whiteswan-lake.jpg';
+import imgWhiteRiver from '@assets/images/2022-lost-elephant/day-1/white-river.jpg';
+import imgGlamourShot from '@assets/images/2022-lost-elephant/day-1/glamour-shot.jpg';
+import imgChangeOfScenery from '@assets/images/2022-lost-elephant/day-1/change-of-scenery.jpg';
+import imgSteepKokoClaims from '@assets/images/2022-lost-elephant/day-1/steep-koko-claims.jpg';
+import imgKokoClaimsCabin from '@assets/images/2022-lost-elephant/day-1/koko-claims-cabin.jpg';
+import imgRideableButSketchy from '@assets/images/2022-lost-elephant/day-1/rideable-but-sketchy.jpg';
+import imgUnrideable from '@assets/images/2022-lost-elephant/day-1/unrideable.jpg';
+import imgOopsTwo from '@assets/images/2022-lost-elephant/day-1/oops-2.jpg';
+import imgSparwoodSelfie from '@assets/images/2022-lost-elephant/day-1/sparwood-selfie.jpg';
 
-This theme comes with the [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) integration installed and configured in your `astro.config.mjs` config file. If you prefer not to use MDX, you can disable support by removing the integration from your config file.
+import imgLoamyGoodness from '@assets/images/2022-lost-elephant/day-2/loamy-goodness.jpg';
+import imgPublicArt from '@assets/images/2022-lost-elephant/day-2/public-art.jpg';
+import imgCanYouSpotTheTrail from '@assets/images/2022-lost-elephant/day-2/can-you-spot-the-trail.jpg';
+import imgMeadow from '@assets/images/2022-lost-elephant/day-2/meadow.jpg';
+import imgHosmerRuins from '@assets/images/2022-lost-elephant/day-2/hosmer-ruins.jpg';
+import imgTickSeason from '@assets/images/2022-lost-elephant/day-2/glad-its-not-tick-season.jpg';
+import imgDirtOrTan from '@assets/images/2022-lost-elephant/day-2/dirt-or-tan.jpg';
+import imgLookingTerrible from '@assets/images/2022-lost-elephant/day-2/looking-terrible-but-feeling-good.jpeg';
 
-## Why MDX?
+<RouteStatistics statistics={frontmatter.statistics} />
+{frontmatter.minutesRead}
 
-MDX is a special flavor of Markdown that supports embedded JavaScript & JSX syntax. This unlocks the ability to [mix JavaScript and UI Components into your Markdown content](https://docs.astro.build/en/guides/markdown-content/#mdx-features) for things like interactive charts or alerts.
+## The Night Before
 
-If you have existing content authored in MDX, this integration will hopefully make migrating to Astro a breeze.
+Driving into Cranbrook, I was feeling a bit defeated. My first year of bikepack
+racing was not off to a smooth start. A month prior I had scratched early in
+what was supposed to be a leisurely-paced Yo-Yo attempt of the
+[BC Epic 1000](https://www.bcepic1000.com/).
 
-## Example
+And now I was in the middle of missing the pre-race get-together for the Lost
+Elephant. There had been a last-minute re-route just as I was about to start my
+drive, forcing me to run back to my computer to download the new route and
+upload it to my eTrex and my phone.
 
-Here is how you import and use a UI component inside of MDX.  
-When you open this page in the browser, you should see the clickable button below.
+Then, on the final stretch of the Banff-Windermere Highway into Radium Hot
+Springs, I had got stuck behind a fuel truck gingerly, carefully, and slooowly
+making it's way down the steep road. I applaud the driver's safety, but the
+extra hour of 10km/h "driving" had soured my mood.
 
-## More Links
+However, as I passed the Cranbrook Chamber of Commerce, the start of tomorrow's
+race, I shook off the grumps and decided to focus. It was time to race. I threw
+my original idea of finding a nice place for dinner out the window, and instead
+pulled into Tim Hortons so that I could get to bed nice and early. While
+feasting on carbs, I double-checked the weather for the weekend and reviewed the
+last-minute route changes. The weather looked hot and not being familiar with
+that area of the route, I didn't have any opinions on the last-minute changes.
 
-- [MDX Syntax Documentation](https://mdxjs.com/docs/what-is-mdx)
-- [Astro Usage Documentation](https://docs.astro.build/en/guides/markdown-content/#markdown-and-mdx-pages)
-- **Note:** [Client Directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) are still required to create interactive components. Otherwise, all components in your MDX will render as static HTML (no JavaScript) by default.
+### Hotel Hardware
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Sagittis eu volutpat odio facilisis mauris sit. Pulvinar etiam non quam lacus suspendisse faucibus interdum. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Semper viverra nam libero justo. A erat nam at lectus urna duis. Sit amet purus gravida quis blandit. Diam maecenas ultricies mi eget mauris pharetra et ultrices. Est lorem ipsum dolor sit amet.
+Belly full and mind at ease, I purchased a blueberry muffin for the morning and
+made my way to my accommodations for the night: the parking lot of the Home
+Hardware. There was a sign welcoming overnight camping, and it was only a block
+away from the start of the race; good enough seeing as a I was going to sleep as
+soon as possible. I backed into a corner spot, hitch facing a fenced-off storage
+area for maximum privacy.
 
-Consequat semper viverra nam libero. Mauris ultrices eros in cursus. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Posuere urna nec tincidunt praesent semper feugiat nibh. Consequat ac felis donec et odio pellentesque. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Id eu nisl nunc mi ipsum. Risus in hendrerit gravida rutrum quisque non tellus orci. Lacus vel facilisis volutpat est velit egestas dui. Nibh cras pulvinar mattis nunc sed. Enim ut sem viverra aliquet eget sit amet tellus. Fringilla phasellus faucibus scelerisque eleifend donec. Arcu odio ut sem nulla pharetra diam sit amet nisl. Ipsum dolor sit amet consectetur adipiscing elit. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
+<Figure
+	src={imgViewFromTheHotel}
+	alt="A sunset, with a fenced-off storage area in the foreground"
+	caption={'View from the luxurious Hotel Hardware in Cranbrook, BC'}
+/>
 
-Volutpat lacus laoreet non curabitur gravida arcu ac. Aenean vel elit scelerisque mauris pellentesque. Gravida rutrum quisque non tellus orci ac. Lectus quam id leo in vitae turpis. Vitae proin sagittis nisl rhoncus. Facilisis sed odio morbi quis commodo odio aenean sed. Id aliquet lectus proin nibh nisl condimentum. Viverra accumsan in nisl nisi scelerisque. Urna nunc id cursus metus aliquam eleifend. Nam aliquam sem et tortor consequat id porta. Fringilla ut morbi tincidunt augue interdum. Faucibus interdum posuere lorem ipsum dolor. Egestas tellus rutrum tellus pellentesque eu tincidunt. Leo a diam sollicitudin tempor id eu nisl nunc. Neque gravida in fermentum et sollicitudin ac orci phasellus egestas. Purus in mollis nunc sed id semper.
+As I finished packing, taking my earlier weather research into consideration, I
+looked around the parking lot and discovered that the Hotel Hardware was
+considerably less sketchy than I was expecting it to be. In fact, it felt just
+like an RV Park. The majority of vehicles were of the camping variety. A trailer
+parked nearby featured an older couple parked in a pair of lawnchairs, reading
+in the evening sun. I had quick chat with them, and then crawled into the back
+of the car for an early bedtime, just before 10pm, cuddling up with my bike. The
+parking lot was nice, but I wasn't taking any chances.
 
-Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Placerat orci nulla pellentesque dignissim enim sit amet venenatis. Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. At tellus at urna condimentum mattis pellentesque. Sed vulputate mi sit amet mauris commodo. Ipsum nunc aliquet bibendum enim facilisis gravida neque. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. Morbi non arcu risus quis varius. Dolor morbi non arcu risus quis varius quam. Fusce ut placerat orci nulla pellentesque dignissim enim. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Accumsan tortor posuere ac ut consequat. Ut faucibus pulvinar elementum integer enim neque volutpat.
+## Day One
 
-Nisl condimentum id venenatis a condimentum vitae. Rhoncus mattis rhoncus urna neque viverra. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisi etiam dignissim diam quis enim lobortis scelerisque. Donec enim diam vulputate ut pharetra sit amet. Id eu nisl nunc mi ipsum faucibus vitae. Eget duis at tellus at urna condimentum mattis pellentesque id. Ac turpis egestas maecenas pharetra convallis. Metus aliquam eleifend mi in nulla. Ipsum a arcu cursus vitae congue mauris rhoncus. Sed tempus urna et pharetra. Purus sit amet luctus venenatis lectus magna. Tincidunt tortor aliquam nulla facilisi. In iaculis nunc sed augue lacus viverra. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Eros in cursus turpis massa tincidunt dui ut. Pharetra convallis posuere morbi leo.
+### Getting Ready
 
-Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Nunc lobortis mattis aliquam faucibus purus. Semper auctor neque vitae tempus quam. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Diam sit amet nisl suscipit adipiscing. Gravida cum sociis natoque penatibus. Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Dictum varius duis at consectetur lorem donec massa sapien faucibus. Nunc vel risus commodo viverra maecenas. Malesuada nunc vel risus commodo viverra. Tortor pretium viverra suspendisse potenti nullam. In pellentesque massa placerat duis ultricies lacus. Nulla at volutpat diam ut venenatis tellus in metus. Viverra nam libero justo laoreet sit amet cursus sit amet. Ante in nibh mauris cursus mattis molestie a iaculis.
+After a surprisingly restful sleep, I woke up at 4:45am and walked over to the
+Tim Hortons which conveniently opened at 5am to brush my teeth and use the
+washroom. On my way back to the car, I noticed that the parking lot was much
+more full than it had been when I went to bed.
 
-Amet dictum sit amet justo. Elit scelerisque mauris pellentesque pulvinar pellentesque. Nullam non nisi est sit. Pharetra massa massa ultricies mi quis hendrerit dolor. Nisl pretium fusce id velit ut tortor. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempor id eu nisl nunc mi ipsum faucibus. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Neque convallis a cras semper auctor neque vitae tempus. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Porttitor massa id neque aliquam vestibulum morbi blandit cursus risus.
+I hopped in my car and drove for roughly 90 seconds to the empty lot behind
+Lordco Auto Parts which had been noted as a good spot to leave your vehicle for
+the weekend, and it was right across the street from the start of the race.
 
-Id aliquet risus feugiat in ante metus dictum at tempor. Risus nec feugiat in fermentum posuere. In massa tempor nec feugiat nisl pretium fusce id. Mi bibendum neque egestas congue quisque egestas diam. Nunc sed velit dignissim sodales ut eu. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Cras adipiscing enim eu turpis. Cursus risus at ultrices mi. Consequat id porta nibh venenatis. Tristique magna sit amet purus gravida. Id venenatis a condimentum vitae sapien pellentesque. Nibh mauris cursus mattis molestie a iaculis at erat. Enim tortor at auctor urna nunc id cursus metus aliquam. Rhoncus mattis rhoncus urna neque viverra justo nec. Risus nec feugiat in fermentum. Volutpat consequat mauris nunc congue. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Iaculis nunc sed augue lacus viverra vitae congue.
+I was one of the first to arrive so I set to getting my bike ready for the
+weekend, in between taking bites of my blueberry muffin. Glen Buchanan then
+parked next to me and pulled out his own blueberry muffin. I complimented his
+choice of breakfast and we had a quick chat while we got ourselves in order.
 
-<Checkpoint index={100} client:load client:only="svelte" />
+As I made my way over to the Chamber of Commerce, I checked my shifting and brakes. Everything felt good. As riders arrived, we inspected each other's setups and made small talk while we waited for 6am.
 
-Gravida quis blandit turpis cursus in. Odio aenean sed adipiscing diam donec adipiscing. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Congue eu consequat ac felis donec. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Porta lorem mollis aliquam ut porttitor. Maecenas ultricies mi eget mauris pharetra. Orci a scelerisque purus semper eget. Odio tempor orci dapibus ultrices in iaculis. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Libero justo laoreet sit amet cursus. Eu sem integer vitae justo eget magna fermentum iaculis eu. Elementum sagittis vitae et leo duis ut diam quam. Risus nullam eget felis eget nunc lobortis mattis aliquam. Amet dictum sit amet justo donec enim diam vulputate ut. Nibh nisl condimentum id venenatis. Nisi vitae suscipit tellus mauris a diam maecenas sed.
+### The Race Begins
 
-Netus et malesuada fames ac. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Scelerisque varius morbi enim nunc faucibus. Posuere morbi leo urna molestie at elementum eu facilisis sed. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Erat velit scelerisque in dictum non consectetur a. Lectus nulla at volutpat diam ut venenatis tellus in. Tortor posuere ac ut consequat. Sem et tortor consequat id porta nibh. Quis hendrerit dolor magna eget est. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. Dui accumsan sit amet nulla. Vitae semper quis lectus nulla at volutpat diam. Dictum at tempor commodo ullamcorper a. Porttitor eget dolor morbi non arcu. Libero justo laoreet sit amet cursus sit amet dictum sit. Elementum tempus egestas sed sed risus.
+<Checkpoint index={0} client:load client:only="svelte">
+	When the clock struck six, Nathan, the organizer, made a casual "let's go" announcement and we set off, a pack of
+	gear-laden cyclists taking up a lane of the Crowsnest Highway out of Cranbrook until we could hop on the Chief Isadore
+	Trail.
+</Checkpoint>
 
-Turpis in eu mi bibendum neque. Quis auctor elit sed vulputate mi sit. In eu mi bibendum neque egestas congue quisque. At risus viverra adipiscing at in. Lorem ipsum dolor sit amet. Proin libero nunc consequat interdum varius sit. Tellus orci ac auctor augue. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Nunc eget lorem dolor sed viverra. At consectetur lorem donec massa sapien faucibus et. Et netus et malesuada fames ac turpis egestas. Diam quis enim lobortis scelerisque. Odio euismod lacinia at quis risus sed vulputate odio ut. Nunc sed velit dignissim sodales ut eu sem integer. Amet venenatis urna cursus eget nunc scelerisque viverra.
+<Checkpoint index={65} client:load client:only="svelte">
+	<Figure
+		src={imgTowardsTheChiefIsadore}
+		alt="A group of riders heading to the Chief Isadore Trail"
+		caption={
+			"The dirt road leading to the start of the Chief Isadore Trail. I'd find myself riding on and off with Justin Keitch (middle) and Stephen Wik (right) for much of the race."
+		}
+	/>
+</Checkpoint>
 
-Velit sed ullamcorper morbi tincidunt. Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Volutpat lacus laoreet non curabitur. Ac placerat vestibulum lectus mauris. Gravida quis blandit turpis cursus. Non quam lacus suspendisse faucibus interdum posuere. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Non pulvinar neque laoreet suspendisse interdum consectetur libero. Volutpat odio facilisis mauris sit amet massa vitae tortor condimentum. Venenatis a condimentum vitae sapien. Proin sed libero enim sed faucibus turpis in eu. Dictum non consectetur a erat. Integer eget aliquet nibh praesent tristique magna sit amet. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed. Amet volutpat consequat mauris nunc congue. Netus et malesuada fames ac turpis egestas sed tempus urna. Ac tortor vitae purus faucibus ornare suspendisse sed nisi. Malesuada pellentesque elit eget gravida. Convallis convallis tellus id interdum. Sed enim ut sem viverra.
+<Checkpoint index={160} client:load client:only="svelte">
+	After a few minutes on the Chief Isadore, the group encountered the first challenge of the race: a gate. Everyone
+	patiently waited as the first rider opened the gate, and then riders started funneling through. As I went through,
+	near the front of the group, I thought "I hope whoever goes through last closes it". I'll never know if they did.
+</Checkpoint>
 
-Iaculis eu non diam phasellus vestibulum. Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Pharetra vel turpis nunc eget. Et tortor consequat id porta nibh venenatis. Iaculis urna id volutpat lacus. Enim tortor at auctor urna. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Sed viverra ipsum nunc aliquet bibendum enim. Ligula ullamcorper malesuada proin libero nunc consequat. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. Enim neque volutpat ac tincidunt vitae semper quis. Turpis egestas sed tempus urna et pharetra pharetra massa. Sociis natoque penatibus et magnis dis. Bibendum at varius vel pharetra vel turpis nunc eget. Fusce id velit ut tortor. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Donec ac odio tempor orci dapibus ultrices.
+<Checkpoint index={270} client:load client:only="svelte">
+	A short stretch of highway shoulder later, we were back on gravel. This is where the race began. With room to pass,
+	riders began to shuffle for position and up at the front of the pack, Andy Ward and Everett Craig laid some extra
+	power down and pulled away from the rest of the group. It was on.
 
-Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Mi proin sed libero enim. Rhoncus dolor purus non enim. Metus dictum at tempor commodo. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Tellus in hac habitasse platea. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Dui vivamus arcu felis bibendum ut. Facilisi cras fermentum odio eu feugiat. Dolor sit amet consectetur adipiscing elit ut aliquam purus. Vitae turpis massa sed elementum tempus. Nulla at volutpat diam ut.
+I was already pushing a bit harder than I knew was a sustainable race pace, so I happily let them drop me. They were doing the Jumbo anyways. My plan was to go a bit harder until Fort Steele, at which point I'd back off and take it easy for the 1343m climb to Top of the World Provincial Park ahead. I was not 100% awake at this point so I was hoping a harder effort up front would put some pep in my step. It didn't work.
 
-Dui accumsan sit amet nulla facilisi morbi tempus. Leo duis ut diam quam. At varius vel pharetra vel turpis nunc eget lorem. At erat pellentesque adipiscing commodo elit at imperdiet dui. Magna fermentum iaculis eu non diam phasellus vestibulum. Nunc sed velit dignissim sodales ut eu sem integer. A lacus vestibulum sed arcu non. Malesuada pellentesque elit eget gravida cum. Erat imperdiet sed euismod nisi porta. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Venenatis a condimentum vitae sapien. Nulla posuere sollicitudin aliquam ultrices sagittis orci a. Augue ut lectus arcu bibendum at varius vel pharetra vel. Egestas fringilla phasellus faucibus scelerisque eleifend donec.
+<Figure src={imgMistyMorning} alt="A misty morning sunrise coming out of Cranbrook" caption={'A misty morning'} />
 
-Auctor eu augue ut lectus arcu bibendum. Egestas diam in arcu cursus euismod quis. Velit egestas dui id ornare arcu odio ut sem nulla. Tempus egestas sed sed risus pretium quam vulputate. Magna fermentum iaculis eu non diam phasellus. Velit laoreet id donec ultrices tincidunt. Quis commodo odio aenean sed adipiscing diam donec adipiscing. Porttitor leo a diam sollicitudin tempor. In dictum non consectetur a. Tortor dignissim convallis aenean et. Enim sit amet venenatis urna cursus eget. Eget egestas purus viverra accumsan in. Bibendum neque egestas congue quisque egestas. Mi bibendum neque egestas congue quisque egestas diam in arcu. Tempor nec feugiat nisl pretium. Risus ultricies tristique nulla aliquet enim tortor at auctor. Elementum nibh tellus molestie nunc non blandit massa enim nec. Bibendum enim facilisis gravida neque convallis a cras semper auctor. Suspendisse faucibus interdum posuere lorem ipsum dolor sit. Arcu vitae elementum curabitur vitae nunc sed.
+</Checkpoint>
 
-Suspendisse in est ante in nibh mauris. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Porta lorem mollis aliquam ut. Facilisis volutpat est velit egestas dui id. Eget nunc scelerisque viverra mauris in. Volutpat ac tincidunt vitae semper quis lectus. Amet massa vitae tortor condimentum lacinia quis vel eros. Ut eu sem integer vitae justo eget magna. Molestie ac feugiat sed lectus vestibulum. Sapien pellentesque habitant morbi tristique senectus et netus et. Sem fringilla ut morbi tincidunt augue interdum velit. Tortor posuere ac ut consequat semper. Eu consequat ac felis donec et odio pellentesque diam volutpat. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Maecenas pharetra convallis posuere morbi leo urna molestie at.
+<Checkpoint index={410} client:load client:only="svelte">
+### Topping the World
 
-Mauris a diam maecenas sed enim. In hac habitasse platea dictumst quisque sagittis. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Enim praesent elementum facilisis leo vel fringilla est. Quis varius quam quisque id diam vel quam. Sem fringilla ut morbi tincidunt augue interdum velit euismod. Vitae justo eget magna fermentum iaculis eu non diam. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Elementum nibh tellus molestie nunc. Convallis convallis tellus id interdum velit laoreet id donec ultrices. Convallis tellus id interdum velit. Leo urna molestie at elementum eu.
+    After the pavement ended at Fort Steele, the gravel road wasted no time in becoming a climb. With the change
+    of grade came an onslaught of yawns. A caffeinated Nuun tab and the sugariest bar in my bag were no match. It wasn't
+    until the first rays of sunshine peeked over the hills that I finally woke up.
 
-Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Pellentesque pulvinar pellentesque habitant morbi tristique. Ipsum consequat nisl vel pretium lectus quam id leo. Tellus molestie nunc non blandit massa enim nec dui. Urna cursus eget nunc scelerisque viverra mauris in. Diam sit amet nisl suscipit. Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Ipsum dolor sit amet consectetur adipiscing elit duis. Ac turpis egestas sed tempus urna et pharetra. Aliquet bibendum enim facilisis gravida neque convallis. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. Lectus quam id leo in vitae turpis massa. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Tristique risus nec feugiat in fermentum. Senectus et netus et malesuada fames ac turpis egestas. Nunc sed augue lacus viverra vitae congue eu consequat ac. Aliquam faucibus purus in massa tempor nec. Augue mauris augue neque gravida in. Sed cras ornare arcu dui vivamus arcu felis bibendum. Enim diam vulputate ut pharetra sit.
+</Checkpoint>
 
-Nullam non nisi est sit. Viverra justo nec ultrices dui sapien eget mi proin sed. Nibh tellus molestie nunc non blandit massa enim. Quis vel eros donec ac odio. In fermentum posuere urna nec tincidunt. Dui sapien eget mi proin sed libero. Risus nec feugiat in fermentum posuere urna nec. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Eget mauris pharetra et ultrices neque ornare aenean euismod elementum. Nunc lobortis mattis aliquam faucibus purus in massa.
+<Checkpoint index={735} client:load client:only="svelte">
+	<Figure src={imgPraiseTheSun} alt="Sunrise just behind hills" caption={'Praise the sun'} />
+</Checkpoint>
 
-<Checkpoint index={4000} client:load client:only="svelte" />
+The next two hours flew by. Because of the climb, most riders were still quite close together, so there was always someone to talk to. And despite the grade, the road was in good condition. Until it wasn't.
+
+Eventually, the steady gravel road turned into unmaintained quad track and the grade inclined further. It was technically rideable, but I felt walking would be more efficient, especially with drop-bars and no suspension, so I hopped off and started pushing. At this point I was "riding" with my muffin twin Glen, and he was somehow still grinding away on the cranks. Impressive.
+
+Despite the effort and the steadily increasing temperature, I was enjoying this section. I had decided to wear a sun hoody for the race after looking at the forecast, and in this moment I was very happy with that decision. Exposed sections of the trail were already roasting in spite of the fact that it was not even 10am. But I knew after reaching the top, there would be a long gradual gravel descent where I could likely enjoy a breeze. I stopped in the middle of a shaded creek that was crossing the trail to refill my water and cool off, and then I was back to pushing.
+
+<Figure
+	src={imgAlmostAtTheTop}
+	alt="A view back down the valley"
+	caption={'A short reprieve from the hike-a-bike, just before the top'}
+/>
+
+<Checkpoint index={1900} client:load client:only="svelte" />
+When I reached the top, I met up with Nathan, Justin, and Stephen. After a short break, we began our descent. A few minutes
+after doing so, Nathan informed us that we had accidentally taken the more technical route down, but that it would meet back
+up soon. This turned out to be a fun detour. Steep singletrack had me pushing my drop-bars to their limits and I somehow
+found myself ahead of the three mountain bikers by the time I reached the gravel road. Knowing the section ahead would favour
+my drop-bars + aero-bars setup, I decided to take advantage of the unexpected overtake and tucked in for an aero descent
+from Top of the World Provincial Park.
+
+### A Lesson on Speed
+
+This section was fast. However, it was not to be taken lightly. Spring melt had clearly crossed the road earlier in the year as there were many narrow ruts breaking the otherwise smooth gravel, as well as deep pot-holes here and there. Both of which could easily cause a crash for an unaware rider. I kept my eyes peeled, hopping ruts, dodging pot-holes, and enjoying the breeze.
+
+<Checkpoint index={2850} client:load client:only="svelte" />
+The fun ended though when I stopped to filter water at Coyote Creek. No longer moving, the heat made itself known again.
+As I sat in the sun, sweating and urging my filter to flow faster, I realized I had made a mistake. Filtering water was a
+poor choice for racing. I watched Nathan, Justin, and Andrew ride past on the bridge, kicked myself for my amateur water
+strategy, and made a mental note for after the race: **buy water treatment tablets**.
+
+### Lakeside Reunions
+
+Fuelled by regret, I made my way up the hill that was the last obstacle between me and Alces Lake. On the other side, I bombed down the descent to the entrance of the campground and found a whole group of riders taking advantage of the shade by the water pump. Nathan, Justin, and Andrew had been joined by Dave Waugh and Jody Funk who were racing the Jumbo.
+
+<Checkpoint index={3200} client:load client:only="svelte" />
+Happy to have caught up, I oiled my chain and had a snack while the group debated whether or not drinking the pump's water
+untreated would be a good idea or not. With the debate still going on, I biked up into the campground to find an outhouse
+while I had the luxury of one. When I returned to the water pump, I found that the group had left. Spying them not too far
+down the road, I put a few extra watts in the pedals to catch up.
+
+### Turning Up the Heat
+
+<Checkpoint index={3300} client:load client:only="svelte" />
+This section of the road provided an emotional boost. While the gravel descent from Top of the World Provincial Park had
+been fun, it hadn't been scenic. Biking past Whiteswan Lake however offered nice views to the left, and shade-providing cliffs
+to the right. I enjoyed the shade, but in hindsight, not as much as I should have.
+
+<Figure src={imgWhiteswanLake} alt="The road along Whiteswan Lake" caption={'Praise the shade'} />
+
+<Checkpoint index={3366} client:load client:only="svelte" />
+
+At the end of the lake, the Dumbo and Jumbo routes split off, and the slog began. What little cooling effect the water had provided was gone. The road was dusty and the sun was hot. Thankfully, the road hugged the White River which provided visual interest and opportunities for refreshingly cold water.
+
+<Figure src={imgWhiteRiver} alt="The road along the White River" caption={'More like White Hot River'} />
+
+<Checkpoint index={3780} client:load client:only="svelte" />
+The confluence of the White River and East White River provided a much needed change in scenery. The road opened into a wide
+valley which had somewhat recently experienced a forest fire. On the way to recovery, the valley was now filled with wildflowers,
+eliciting a "wow" from my dust-dried mouth.
+
+    <Figure src={imgGlamourShot} alt="Bike amongst wildflowers, leaning against a wayfinding sign" caption={'Beautiful'} />
+
+Unfortunately, this forest fire of the past also meant that any trees had been stripped of their greenery. My sun hoody was worth its weight in gold at this point.
+
+    <Figure src={imgChangeOfScenery} alt="Winding road through wildfire regrowth" caption={'A welcome change of scenery'} />
+
+### Up Koko Claims
+
+After taking some glamour shots of my bike amongst the wildflowers, I set off up the road to the northern-most point of the route. This was roughly the third-of-the-way point I had determined from eyeballing the map and I was excited for a milestone, however arbitrary.
+
+<Checkpoint index={3890} client:load client:only="svelte" />
+
+It was here that Angela Etheridge caught up with me. I was feeling drained from the heat but a new riding companion brought some life back into me. We eventually caught up with the now extremely familiar trio of Nathan, Justin, and Stephen who I had been leapfrogging with all afternoon. And it was at this moment, a third of the way into the race, that I knew who I was competing against.
+
+<Checkpoint index={4500} client:load client:only="svelte" />
+Unfortunately, this competitive spirit didn't last long. As we met back up with the Jumbo route and turned East towards Koko
+Claims, my energy hit a low point. I was starting to feel dehydrated and losing interest in the food I had brought. Despite
+the definite rideability of this section, I chose to walk it, letting the others pull ahead while I tried to drink more water
+and eat more food.
+
+<Checkpoint index={4600} client:load client:only="svelte" />
+Fortunately, my energy picked up just as the incline did. At this point, I was stoked for an excuse not to ride and the ridiculous
+grade provided just that.
+
+    <Figure src={imgSteepKokoClaims} alt="An impossibly steep hill of loose gravel and stones" caption={"A picture doesn't do the steepness justice"} />
+
+Having followed the Tour Divide for a few years, I was excited to see what all the fuss was about, and it did not disappoint. Nearing the top, moving forward meant throwing my bike up the hill a foot or so, locking the brakes, and then pulling myself up. I was loving the absurdity of it. By the time I reached the top, I had a smile on my face. It wasn't a quick ascent, but it was a fun one. Am I a masochist?
+
+    <Figure src={imgKokoClaimsCabin} alt="A small cabin at the top of Koko Claims" caption={'No views at the top other than this cabin'} />
+
+### Down Koko Claims
+
+Seeing the cabin at the top, I thought "how the hell do people drive up here"? And then seeing the downhill on the other side I thought, "how the hell do people bike down here"?.
+
+    <Figure src={imgRideableButSketchy} alt="A steep descent full of loose rocks" caption={'Rideable, but sketchy'} />
+
+It took a second, but that latter question settled in. How am I going to bike down here? It was very obvious that trying to ride down would be a bad idea, at least on my drop-bar bike. The road was littered with giant sized "gravel" and with no-dropper post, my weight would be way too far forward. I considered lowering my seatpost, but that would mean removing my seatpack as I was cutting it close with tire clearance already. Too much work. I accepted my fate.
+
+    <Figure src={imgUnrideable} alt="An even steeper descent, with larger and looser rocks" caption={'Completely unrideable'} />
+
+I carefully picked my way through the rocks, occasionally riding a few seconds at a time. It was slow going. And knowing that my competition, Nathan, Justin, and Stephen were on mountain bikes made it worse. I knew they would have been able to ride much more of the descent, and likely had a good lead on me now. And while Angela too was on drop-bars, she seemed like a strong rider and had mentioned doing Koko Claims during a training ride, so I was sure she'd have something up her sleeve.
+
+Eventually the road became rideable, though still steep and still rocky. I was riding fast and braking hard. I had to stop a couple of times to shake my hands out from squeezing the brakes for so long. This was arguably worse than walking down. With no suspension, I was getting shaken apart and my hands were screaming. Eventually I spotted the turn off onto the Elkford Community Trail, skidding past it, and then doubling back.
+
+### Elkford
+
+I was excited for some mellow singletrack into town, but first I had to give my hands a break. While I shook them out, I had a snack and checked [Trackleaders](http://trackleaders.com/lostelephant22) for the first time in the race. Nathan was already past Elkford, Justin and Stephen appeared to be stopped at one of the gas stations on route, snd Angela was still on trail ahead of me. Determined to make up lost time, I tackled the singletrack as fast as I could, which was... not very fast.
+
+As I pulled into the outskirts of Elkford, through a residential area, I heard the rev of an engine and looked over just in time to see someone on a dirtbike crash at a T-intersection a block down, presumably attempting some sort of cool maneuver. It was not cool. His bike slid into the middle of the intersection he ended up on his back. After a moment he stood up, no helmet on of course, and dejectedly walked over to pick up his ride. Seeing that he was alright, I looked away, pretending that I had seen nothing, and continued on.
+
+I pulled up to the gas station and was delighted to see that Justin, Stephen, and Angela were all still there. Checking the time, I knew they had been here for a while already and would likely be heading out soon. I quickly restocked food from the gas station, searching for salty snacks, my body begging for more electrolytes. I then rushed to brush my teeth and refill my water in the washroom. After exiting, I discovered that Angela had just left, and Justin and Andrew were making final preparations. I stuffed everything in my bag and joined them, pleased that I had made up for my slow traverse of Koko Claims.
+
+### To Sparwood
+
+Shortly after leaving Elkford, we hopped onto the Sulphur Springs Trail. This was a surprise to me. Why? I hadn't looked at this area of the route very closely and assumed it was going to be gravel. Why? I don't know.
+
+However, I didn't have time to be surprised by my idiocy because I had another surprise to attend to: I felt fresh. That Formula One style pitstop had worked some magic. My legs were raring to go. I took the first opportunity to pass Justin and Andrew on the singletrack and then soon found myself on doubletrack where I was able to make use of my newfound energy.
+
+Eventually though, as the sun began to set, the route took me off of the speedy doubletrack and onto a trail/road of questionable quality. Time to turn the lights on. It was quite overgrown and the bugs were coming out. Seeing a long stone-strewn hill ahead, I decided this was a good time for a quick call to my partner. I walked up the hill as we had a quick chat, and then seeing the top up ahead, I wished her goodnight and hopped back on the bike.
+
+As I crested the hill, I found Angela setting up camp at an intersection. She said the bugs were getting too bad for her liking and that she was going to sleep for a bit. I considered setting up camp as well, but I was still feeling fresh and knew this was an opportunity to gain even more ground, so I said goodnight to her as well.
+
+### Oops One: Eyes on the Road
+
+I hopped on my bike, taking the Sparwood-orientated fork of the intersection. I found myself in a deep tire trench descending a hill. Feeling suspicious, I looked down at my GPS to make sure I was on track. I was not. Flabbergasted that I had gone the wrong direction, I started braking, looking around for a hidden trailhead. Not paying attention to the road ahead, my front tire hit a patch of loose gravel, and my wheel washed out from underneath me. I hit the ground hard, the left side of my torso landing right on the edge of the tire trench that I was now laying in.
+
+After the obligatory moment of stillness following a crash, I checked the damage. Ribs didn't feel broken, but my side sure as hell hurt, and there were a few scrapes on my leg, but nothing worthy of first aid. I groaned into a sitting position and inspected my bike. It appeared to have fared better than me. I picked it up, smacked a brake lever back into position, scanned the ground for lost items, and then made my way back up the hill to the intersection.
+
+As I crested the intersection hill again, this time from the other side, I had my fingers crossed that Angela hadn't heard my crash. I don't know if she did, but her question was "Wrong turn?", not "You okay?". So I assumed my shame was safe for now. I groaned out an affirmative and looked around for the turn I had missed. There it was, a subtle trailhead next to the road I had taken, easy to miss in the dark. I felt a bit better.
+
+### Nightrider
+
+As I pedalled away and the adrenaline faded, I could feel the effects of the crash more clearly. Pulling on my handlebars, I could tell that I had bruised my left lat, and likely a rib or two underneath it. It wasn't bad, but it wasn't great, especially considering I was only about halfway through the race.
+
+Luckily, the trail quickly spit me out onto a well maintained gravel road where I could flop into my aerobars and cover some ground relatively pain-free. At this point it was completely dark, but crash or no crash, I was set on making it to Sparwood before sleeping. I put on some appropriate nighttime tunes, and enjoyed the gravel. It was uneventful other than one large pair of eyes in the darkness to my left that stared at me as I went by. It was probably a cow, but my mind was seeing a large grizzly standing on its hind legs. I looked behind me just in case. Nothing in pursuit.
+
+Eventually I reached a spot on the route that I had flagged during my route research as an easy-to-miss turn off. After a short stretch of pavement, the route went offroad onto a barely visible quad track into the trees. My research paid off and I spotted the faint tire tracks in the grass. Before heading into the trees, I took advantage of the long sightlines to stop and eat one of the two bags of chips that I had purchased in Elkford.
+
+Sodium levels restored, I plunged into the darkness of the forest. This quad track was very overgrown; a tunnel through the trees; a bear's paradise. I belted out a few of the most presence-establishing "hey bear"s that I could muster, wincing at the pain in my ribs.
+
+Thankfully, the quad track was short and soon spit me back onto pavement. And not just any pavement, civilized pavement. There were houses, and lights, and signs. Not many, but some. I was on the final stretch to Sparwood.
+
+Cranking the music, I tucked in and bombed down the smooth pavement. I was having a blast. The best part of night riding is that the world is yours. Other than a family of skunks prancing cutely along the side of the road, I didn't see a single soul, and I was loving it.
+
+### Oops Two: Don't Make Assumptions
+
+**Things I Tested**
+
+- Headlight
+- Portable Battery
+- PedalCell dynamo
+- USB C to USB C cable
+
+**Things I Didn't Test**
+
+- All of those things together
+
+As the route veered off the pavement onto a fieldside trail, I noticed that my light was running low on battery. Knowing that I'd only be riding for one night and that I had plenty of backup power, I had been running it on a brighter setting. Why not? So I stopped to plug my light into my portable battery and carried on.
+
+After reaching Highway 43 which would take me into Sparwood, I looked down and noticed that my light wasn't charging. That's weird. Maybe my battery is a dud? Luckily I had a PedalCell dynamo for backup power. I engaged it to my rim, moved the USB cable from the battery to the PedalCell, and started pedalling again.
+
+Uh oh.
+
+    <Figure src={imgOopsTwo} alt="A blurry photo of a light that is on, but not charging" caption={'If you squint, you can see the charging not taking place'} />
+
+I was definitely going fast enough for the PedalCell to kick in, but the light still wasn't charging, so I knew I had a problem. Troubleshooting, I moved the USB cable from my light to my phone, and from the PedalCell back to the battery, and immediately saw my phone begin to charge.
+
+Uh oh.
+
+A horrifying realization occurred: **my light was charging my battery, not the other way around**. I knew this was a feature of my light. It had a 5000mAh battery that could be used as a portable battery. When I bought it, I thought it was a pointless feature, now I realized it was a dangerous one. I had only ever used the light with a USB A to USB C cable. But with a USB C to USB C cable, the current was flowing in the wrong direction. Shit.
+
+I switched the light to its lowest setting and carried on to Sparwood. It died just outside of town, but I had small headlamp attached to my helmet which was enough for the final minutes into Sparwood.
+
+### A Wrench in the Plan
+
+My sleep strategy going into the race: sleep until I got cold. With the warm forecast, I had only brought an SOL Escape Bivy and a half-length foam sleeping pad. Not exactly cozy.
+
+Riding the next section in the dark with only a small headlamp would not be fun. It was singletrack. My original plan was now a last resort.
+
+My last hope is that a gas station would still be open and that I'd be able to purchase a USB A to USB C cable. No such luck. It was midnight as I entered Sparwood and it was a ghost town, nothing open.
+
+As I mulled over my options, I biked over to take a selfie with The World's Largest Tandem-Axle Truck, a Sparwood must. Here, I took a second to check Trackleaders again. It looked like Nathan too had stopped in Sparwood for the night. So I set off to find my own spot.
+
+    <Figure src={imgSparwoodSelfie} alt="A nighttime selfie in front of the World's Largest Tandem Axle Truck" caption={'Spirits high, despite my current situation'} />
+
+I biked over to the high school and setup my bivy in some bushes at the edge of the field. I was hoping this spot would be quiet enough and warm enough to sleep through the night. It was not.
+
+Two and a half hours later, I woke up freezing. This was a bad spot. The school was at the bottom of a hill and the cold had settled in, the adjacent field was already covered in dew.
+
+I briefly considered starting the singletrack section, but with roughly three hours until dawn, my icy bones convinced to find somewhere warm and wait for a revitalizing cup of coffee before heading out.
+
+Rolling up my bivy, I set it precariously on top of my handlerbars and went in search of warmth. I found a post office nearby, pulled my bike inside, and unrolled my bivy in a cozy looking corner, immediately falling back asleep.
+
+<RouteStatistics
+	statistics={[
+		{ name: 'Distance', value: 196.27, unit: 'km' },
+		{ name: 'Elevation Gain', value: 3148, unit: 'm' },
+		{ name: 'Elapsed Time', value: '18:55:08' },
+		{ name: 'Moving Time', value: '15:26:24' },
+	]}
+/>
+
+## Day Two
+
+At 4:15am I woke again, this time to the alarm I had set notifying me that Tim Hortons was about to open. I was no more rested than I had been after my previous awakening, but I was significantly warmer. I packed my bags, making sure to leave my corner of the post office as clean as I had found it, and then made a beeline for Tim Hortons.
+
+I grabbed a coffee and some carbs and sat down at a booth to wait for a sign of dawn before heading out. I checked Trackleaders just in time to watch Dave Cleveland's dot cross the Dumbo finish line. Woah. Mental note: **train more**. And not too far behind Dave was Julie Labreque, and not too far behind Julie was Dan Perron. That left Nathan and I tied for fourth, ~150km behind the winner. Woah.
+
+Looking further back along the map, Angela was still where I had last seen her, and Justin and Stephen had camped somewhere past that, meaning that Nathan and I had a decent headstart on the second day.
+
+Speaking of whom, as I was starting to pack my bags, Nathan rolled in, looking much fresher than I was feeling. We had a quick chat and then I made by way back to the World's Largest Tandem Axle Truck to refill my water at a fountain (colder than the faucets of the Tim Horton's washroom). As I was doing so, I saw Nathan bike by. His Tim Hortons visit was much quicker than mine. But having seen how strong of a rider he was yesterday, and knowing that he probably had a much better sleep, I was in no rush to chase him.
+
+### Elk Valley Trail
+
+As I hopped onto the local singletrack that would eventually link up with the Elk Valley Trail and take me to Fernie, I was feeling groggy, but optimistic. The soil was loamy, a vast improvement from the dusty everything of the day before, and it was largely downhill for the next 40km. Easy.
+
+    <Figure src={imgLoamyGoodness} alt="A lush and loamy section of the Elk Valley Trail" caption={'Look at that loamy goodness'} />
+
+<RouteStatistics
+	statistics={[
+		{ name: 'Status', value: frontmatter.result.status },
+		{ name: 'Time', value: frontmatter.result.time },
+		{
+			name: 'Place',
+			value: frontmatter.result.place,
+		},
+	]}
+/>

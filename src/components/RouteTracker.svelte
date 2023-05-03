@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import L from 'leaflet';
-	import type { Map, LatLng, LatLngTuple, Marker, LatLngBoundsExpression } from 'leaflet';
-	import { latestIndex } from 'src/stores/routeStore';
+	import type { Map, LatLng, Marker, LatLngBoundsExpression } from 'leaflet';
+	import { latestIndex, observedIndexes } from 'src/stores/routeStore';
 	import { fetchApi } from 'src/lib/fetchApi';
 	import { resizeObserver } from 'src/lib/actions/resizeObserver';
 
@@ -95,17 +95,18 @@
 			zoomControl: false,
 
 			// Disable interactivity
-			dragging: false,
-			tap: false,
-			scrollWheelZoom: false,
-			boxZoom: false,
-			doubleClickZoom: false,
-			inertia: true,
+			// dragging: false,
+			// tap: false,
+			// scrollWheelZoom: false,
+			// boxZoom: false,
+			// doubleClickZoom: false,
+			// inertia: true,
 		}).fitBounds(bounds);
 		L.tileLayer(
-			`https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=${import.meta.env.PUBLIC_THUNDERFOREST_API_KEY}`,
+			// `https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=${import.meta.env.PUBLIC_THUNDERFOREST_API_KEY}`,
+			'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
 			{
-				maxZoom: 14,
+				maxZoom: 15,
 			}
 		).addTo(map);
 
@@ -196,7 +197,7 @@
 		}
 
 		marker?.setLatLng({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng });
-		map?.setView({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng }, 11);
+		map?.setView({ lat: coordinates[currentIndex].lat, lng: coordinates[currentIndex].lng }, 12);
 	}
 
 	function startAnimation(to: number) {
@@ -235,6 +236,11 @@
 			startAnimation(val);
 		}
 	});
+
+	const dateFormat = new Intl.DateTimeFormat('en', {
+		timeStyle: 'short',
+		dateStyle: 'medium',
+	});
 </script>
 
 {#await promise then data}
@@ -244,5 +250,12 @@
 		class:opacity-100={mapIsReady === true}
 		use:mapBuilder={data}
 		use:resizeObserver={handleMapResize}
-	/>
+	>
+		<div class="absolute right-0 bottom-0 p-4 z-[1000]">
+			<div class="bg-black text-white px-4 py-2">
+				{$latestIndex}
+				{dateFormat.format(new Date(data.coordinates[currentIndex].timestamp))}
+			</div>
+		</div>
+	</div>
 {/await}
