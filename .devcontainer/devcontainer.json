@@ -1,0 +1,41 @@
+{
+	"name": "Node.js + TypeScript + Bun.sh",
+
+	// Custom Dockerfile
+	"build": { "dockerfile": "Dockerfile" },
+
+	// Install deps and run dev
+	"updateContentCommand": "bun install",
+	"postAttachCommand": "bun run dev --host",
+
+	// Forward dev server port
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Dev Server",
+			"onAutoForward": "openBrowserOnce"
+		}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"antfu.unocss",
+				"astro-build.astro-vscode",
+				"DavidAnson.vscode-markdownlint",
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"github.vscode-pull-request-github",
+				"ms-azuretools.vscode-docker",
+				"svelte.svelte-vscode",
+				"unifiedjs.vscode-mdx",
+				"ZixuanChen.vitest-explorer"
+			]
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
